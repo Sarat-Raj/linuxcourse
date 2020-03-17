@@ -1,0 +1,56 @@
+record (calc,"$(lc):add")
+{
+        field(INPA,"$(lc):num1")
+        field(INPB,"$(lc):num2")
+        field(CALC, "a + b")
+}
+record (calc,"$(lc):sub")
+{
+	field(INPA,"$(lc):num3")
+	field(INPB,"$(lc):num4")
+	field(CALC, "a - b")
+}
+record (calc,"$(lc):mul")
+{
+        field(INPA,"$(lc):num5")
+        field(INPB,"$(lc):num6")
+        field(CALC, "a * b")
+}
+record (calc,"$(lc):div")
+{
+        field(INPA,"$(lc):num7")
+        field(INPB,"$(lc):num8")
+        field(CALC, "a / b")
+}
+record(longin,"$(lc):num1"){
+	field(VAL, "22")
+        field(FLNK, "$(lc):add")
+}
+record(longin,"$(lc):num2"){
+	field(VAL, "7")
+        field(FLNK, "$(lc):add")
+}
+record(longin,"$(lc):num3"){
+        field(VAL, "22")
+        field(FLNK, "$(lc):sub")
+}
+record(longin,"$(lc):num4"){
+        field(VAL, "7")
+        field(FLNK, "$(lc):sub")
+}
+record(longin,"$(lc):num5"){
+        field(VAL, "22")
+        field(FLNK, "$(lc):mul")
+}
+record(longin,"$(lc):num6"){
+        field(VAL, "7")
+        field(FLNK, "$(lc):mul")
+}
+record(longin,"$(lc):num7"){
+        field(VAL, "22")
+        field(FLNK, "$(lc):div")
+}
+record(longin,"$(lc):num8"){
+        field(VAL, "7")
+        field(FLNK, "$(lc):div")
+}

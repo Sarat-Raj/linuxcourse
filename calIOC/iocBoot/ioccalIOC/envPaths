@@ -1,0 +1,4 @@
+epicsEnvSet("IOC","ioccalIOC")
+epicsEnvSet("TOP","/home/epics/repos/calIOC")
+epicsEnvSet("EPICS_BASE","/usr/local/epics/base")
+epicsEnvSet("CALC","/usr/local/epics/support/calc/current")
