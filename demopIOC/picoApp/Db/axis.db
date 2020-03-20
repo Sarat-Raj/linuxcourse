@@ -1,0 +1,10 @@
+record(longout, "$(P):A$(AXIS):MOVE_REEL")
+{
+    field(DTYP, "stream")
+    field(OUT, "@NEWFOCUS8742.proto move_relative($(P):A$(AXIS):AXIS) $(PORT)")
+}
+record(longin, "$(P):A$(AXIS):AXIS")
+{
+    field(PINI,"YES")
+    field(VAL, "$(AXIS)")
+}

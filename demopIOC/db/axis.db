@@ -1,0 +1,25 @@
+record(longout, "$(P):A$(AXIS):MOVE_REL")
+{
+    field(DTYP, "stream")
+    field(OUT, "@NEWFOCUS8742.proto move_relative($(P):A$(AXIS):AXIS) $(PORT)")
+}
+record(longin, "$(P):A$(AXIS):AXIS")
+{
+    field(PINI,"YES")
+    field(VAL, "$(AXIS)")
+}
+record(longin, "$(P):$(AXIS):getvelo")
+{
+	field(PINI, "YES")
+	field(DTYP, "stream")
+	field(INP, "@NEWFOCUS8742.proto getVELO($(P):A$(AXIS):AXIS) $(PMC)")
+   
+}
+record(longout,"$(P):$(AXIS):setvelo")
+{
+##      field(PINI, "YES")
+        field(DTYP, "stream")
+        field(OUT, "@NEWFOCUS8742.proto SetVelo($(P):A$(AXIS):AXIS) $(PMC)")
+         field(FLNK, $(P):$(AXIS):getvelo )
+
+}
