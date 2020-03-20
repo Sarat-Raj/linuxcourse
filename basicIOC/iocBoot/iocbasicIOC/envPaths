@@ -1,0 +1,4 @@
+epicsEnvSet("IOC","iocbasicIOC")
+epicsEnvSet("TOP","/home/epics/repos/basicIOC")
+epicsEnvSet("EPICS_BASE","/usr/local/epics/base")
+epicsEnvSet("AUTOSAVE","/usr/local/epics/support/autosave/current")

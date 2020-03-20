@@ -1,0 +1,13 @@
+record(stringin, "BASIC_IOC:MY_STRING") 
+{
+	field(DESC, "a simple sample")
+#	field(NAME, "swamy")
+#	field(VAL, "Sarat Raj")
+##	field(EGU, "degree faranheit")
+##	field(PREC, "")
+	field(INP, "Basic:input")
+}
+record(stringout, "Basic:input")
+{
+#	field(OUT, "BASIC_IOC:MY_STRING")
+}
