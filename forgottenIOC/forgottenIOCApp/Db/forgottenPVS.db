@@ -1,0 +1,79 @@
+record(longout,"$(F):$(AXIS)axis:rel_motion")
+{
+    field(DTYP, "stream")
+    field(OUT, "@forgottenM.proto rel_motion($(F):$(AXIS)axis) $(PORT)")
+}
+record(stringin,"$(F):get_ip")
+{
+    field(PINI,"YES")
+    field(DTYP, "stream")
+    field(INP, "@forgottenM.proto get_ip() $(PORT)")
+}
+record(longin,"$(F):err_msg")
+{
+    field(SCAN,"2 second")
+    field(DTYP, "stream")
+    field(INP, "@forgottenM.proto err_msg() $(PORT)")
+}
+record(longin,"pv1")
+{
+}
+record(stringin,"$(F):full_error")
+{
+    field(SCAN,"2 second")
+    field(DTYP, "stream")
+    field(INP, "@forgottenM.proto wer_ms(pv1) $(PORT)")
+}
+record(longout,"$(F):abortmotion")
+{
+# by giving any value to this abortmotion funtion, will flnk to the abort motion protocal and thus call abort
+    field(DTYP, "stream")
+    field(OUT, "@forgottenM.proto abort_motion() $(PORT) ")
+}
+record(longin, "$(F):$(AXIS)axis")
+{
+    field(PINI,"YES")
+    field(VAL,"$(AXIS)")
+}
+record(longin, "$(F):$(AXIS):get_pos" )
+{
+    field(DTYP, "stream")
+    field(INP, "@forgottenM.proto get_pos($(F):$(AXIS)axis) $(PORT) ")
+}
+record(longin, "$(F):$(AXIS):get_vel" )
+{
+    field(DTYP, "stream")
+    field(INP, "@forgottenM.proto get_vel($(F):$(AXIS)axis) $(PORT) ")
+}
+record(longout, "$(F):$(AXIS):set_vel" )
+{
+    field(DTYP, "stream")
+    field(OUT, "@forgottenM.proto set_vel($(F):$(AXIS)axis) $(PORT) ")
+}
+record(seq ,"SEQ")
+{
+#   field(PINI, "YES")
+    field(SELM, "All")
+    field(LNK1, "$(F):1axis:rel_motion PP")
+    field(DOL1, "200")
+    field(DLY1, "10")
+    field(LNK2, "$(F):4axis:rel_motion PP")
+    field(DOL2, "200")
+    field(DLY2, "10")
+}
+record(bi, "STOP")
+{
+    field(FLNK,"$(F):$(AXIS):stopmotion.PROC")
+}
+record(longout,"$(F):$(AXIS):stopmotion")
+{
+    field(DTYP, "stream")
+    field(OUT, "@forgottenM.proto stop_motion($(F):$(AXIS)axis) $(PORT)")
+}
+
+# record (calcout, "$(F):ver")
+# {
+    # field(INPA, "STOP")
+    # field(CALC, "A = 1")
+    # field(OOPT, "$(F):abortmotion")
+# }

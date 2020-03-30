@@ -1,0 +1,43 @@
+OutTerminator = CR;
+InTerminator = CR LF; 
+get_ip
+{
+	out "IPADDR?";
+	in "%s";
+}
+err_msg
+{
+	out "TE?";
+	in "%i";
+}
+wer_ms
+{
+	out "TB?";
+	in "%(\$1)i, %#s";
+}
+rel_motion
+{
+	out "%(\$1)iPR%i";
+}
+abort_motion
+{
+    out "AB";
+}
+stop_motion
+{
+	out "%(\$1)iST";
+}
+get_pos
+{
+	out "%(\$1)iTP?";
+	in "%i";
+}
+get_vel
+{
+	out "%(\$1)iVA?";
+	in "%i";
+}
+set_vel
+{
+	out "%(\$1)iVA%i";
+}
