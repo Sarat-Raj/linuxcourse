@@ -1,0 +1,2 @@
+record(stringin,$(sar):whatsup1:string) {}
+record(longin,$(sar):whatsup2:int) {}

@@ -1,0 +1,5 @@
+epicsEnvSet("IOC","iocpico")
+epicsEnvSet("TOP","/home/epics/repos/demopIOC")
+epicsEnvSet("EPICS_BASE","/usr/local/epics/base")
+epicsEnvSet("ASYN","/usr/local/epics/support/asyn/current")
+epicsEnvSet("STREAMDEVICE","/usr/local/epics/support/stream/current")

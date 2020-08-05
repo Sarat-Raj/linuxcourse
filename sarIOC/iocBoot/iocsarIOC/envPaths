@@ -1,0 +1,3 @@
+epicsEnvSet("IOC","iocsarIOC")
+epicsEnvSet("TOP","/home/epics/repos/sarIOC")
+epicsEnvSet("EPICS_BASE","/usr/local/epics/base")
